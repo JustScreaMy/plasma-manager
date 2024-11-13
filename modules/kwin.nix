@@ -458,7 +458,7 @@ in
           ];
         in
         lib.mkOption {
-          type = with lib.types; nullor (enum enumVals);
+          type = with lib.types; nullOr (enum enumVals);
           default = null;
           example = "sidebar";
           description = "The visualisation type of Task Switcher.";
@@ -478,21 +478,21 @@ in
           apply = sortOrder: if (sortOrder == null) then null else switchingModeId.${sortOrder};
         };
       includeShowDesktop = lib.mkOption {
-        type = with lib.types; nullor bool;
+        type = with lib.types; nullOr bool;
         default = null;
         example = true;
         description = "Include 'Show Desktop' entry in Task Switcher.";
         apply = showDesktopMode: if showDesktopMode == true then 1 else null;
       };
       oneWindowPerApp = lib.mkOption {
-        type = with lib.types; nullor bool;
+        type = with lib.types; nullOr bool;
         default = null;
         example = true;
         description = "Show only one window per application in Task Switcher.";
         apply = applicationMode: if applicationMode == true then 1 else null;
       };
       minimisedFirst = lib.mkOption {
-        type = with lib.types; nullor bool;
+        type = with lib.types; nullOr bool;
         default = null;
         example = true;
         description = "Order minimised windows after non-minimised ones in Task Switcher.";
